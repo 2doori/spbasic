@@ -1,0 +1,1 @@
+Q4 실행 후 Terminal.exe 실행 하여 결과 확인 

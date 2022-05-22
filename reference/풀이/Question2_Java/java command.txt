@@ -1,0 +1,5 @@
+부록2
+
+java -cp bin card.validator.client.ValidatorLauncher 
+
+또는 java -cp bin card.validator.client.ValidatorLauncher < LOGIN_TEST.TXT 으로 실행 가능 

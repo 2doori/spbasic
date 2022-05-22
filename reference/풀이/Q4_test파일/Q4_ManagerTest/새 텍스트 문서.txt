@@ -1,0 +1,1 @@
+ssp_java_test > SERVER 에다가 생성된 파일 넣으면 됨 
