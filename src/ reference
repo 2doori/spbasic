@@ -38,3 +38,16 @@ httpClient.stop();
 
 // thread참조
 https://honbabzone.com/java/java-thread/
+
+// jar 실행
+ public void process(String imageDir) throws IOException {
+    ProcessBuilder builder = new ProcessBuilder("java", "-jar", this.jarFileName);
+    //argument도 적어줄 수 있다.
+    ProcessBuilder builder = new ProcessBuilder("java", "-jar", this.jarFileName, imageDir);
+    
+    //Command 명령을 실행하고자 하는 위치를 지정해준다.
+    builder.directory(new File(defaultFilePath));
+    builder.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+    builder.redirectError(ProcessBuilder.Redirect.INHERIT
+    builder.start();
+  }
