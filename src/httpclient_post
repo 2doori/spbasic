@@ -1,3 +1,27 @@
+HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
+
+conn.setRequestProperty("Content-Type", "application/json");
+conn.setDoOutput(true);
+conn.setRequestMethod("GET");
+
+BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+
+String inputLine;
+StringBuffer response = new StringBuffer();
+
+while ((inputLine = in.readLine()) != null) {
+  response.append(inputLine);
+}
+in.close();
+
+JsonObject jsonObj = (JsonObject) JsonParser.parseString(response.toString());
+
+
+
+
+
+
+
 JsonObject outObj = new JsonObject();
 outObj.addProperty("result", output);
 
