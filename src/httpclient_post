@@ -1,0 +1,16 @@
+JsonObject outObj = new JsonObject();
+outObj.addProperty("result", output);
+
+Gson gson = new GsonBuilder().serializeNulls().create();
+
+HttpClient httpClient = new HttpClient();
+httpClient.start();
+
+ContentResponse res = httpClient.newRequest(output_uri)
+.method(HttpMethod.POST)
+.header(HttpHeader.CONTENT_TYPE, "application/json")
+.content(new StringContentProvider(gson.toJson(outObj),"utf-8"))
+.send();
+
+String resStr = new String(res.getContent());
+httpClient.stop();
