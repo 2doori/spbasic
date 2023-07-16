@@ -1,3 +1,4 @@
+// get 호출
 HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
 
 conn.setRequestProperty("Content-Type", "application/json");
@@ -17,11 +18,7 @@ in.close();
 JsonObject jsonObj = (JsonObject) JsonParser.parseString(response.toString());
 
 
-
-
-
-
-
+// httpclient post 호출
 JsonObject outObj = new JsonObject();
 outObj.addProperty("result", output);
 
@@ -38,3 +35,6 @@ ContentResponse res = httpClient.newRequest(output_uri)
 
 String resStr = new String(res.getContent());
 httpClient.stop();
+
+// thread참조
+https://honbabzone.com/java/java-thread/
